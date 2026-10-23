@@ -1,0 +1,210 @@
+{
+  "STORE1": {
+    "top5_days": [
+      "2025-08-20",
+      "2025-09-22",
+      "2026-01-15",
+      "2025-09-03",
+      "2025-10-17"
+    ],
+    "top5_revenue_cents": [
+      371935,
+      358794,
+      330738,
+      326325,
+      325232
+    ],
+    "unique_users": 3221,
+    "unique_author_sets": 324,
+    "most_popular": [
+      {
+        "authors": [
+          "Darron Ernser",
+          "Miss Lorina Kertzmann"
+        ],
+        "copies": 173
+      }
+    ],
+    "best_buyers": [
+      {
+        "ids": [
+          48403,
+          48904,
+          50056
+        ],
+        "spend_cents": 131759,
+        "names": [
+          "Cyril Hegmann"
+        ]
+      }
+    ],
+    "total_cents": 73935403,
+    "extra_top5_tie_dates": []
+  },
+  "STORE2": {
+    "top5_days": [
+      "2025-11-16",
+      "2025-12-12",
+      "2025-12-10",
+      "2025-09-19",
+      "2025-11-19"
+    ],
+    "top5_revenue_cents": [
+      378961,
+      312715,
+      302453,
+      293886,
+      291520
+    ],
+    "unique_users": 3166,
+    "unique_author_sets": 281,
+    "most_popular": [
+      {
+        "authors": [
+          "Kenneth Hamill",
+          "Marcus McKenzie"
+        ],
+        "copies": 176
+      }
+    ],
+    "best_buyers": [
+      {
+        "ids": [
+          51014
+        ],
+        "spend_cents": 113107,
+        "names": [
+          "Tod Casper"
+        ]
+      }
+    ],
+    "total_cents": 66810384,
+    "extra_top5_tie_dates": []
+  },
+  "STORE3": {
+    "top5_days": [
+      "2025-10-09",
+      "2025-09-21",
+      "2025-09-04",
+      "2025-09-30",
+      "2025-09-01"
+    ],
+    "top5_revenue_cents": [
+      355119,
+      324300,
+      304139,
+      301760,
+      293743
+    ],
+    "unique_users": 2955,
+    "unique_author_sets": 307,
+    "most_popular": [
+      {
+        "authors": [
+          "Loreta Metz"
+        ],
+        "copies": 155
+      }
+    ],
+    "best_buyers": [
+      {
+        "ids": [
+          52881,
+          53869,
+          54846
+        ],
+        "spend_cents": 139866,
+        "names": [
+          "Burt Streich",
+          "Kendal Ernser"
+        ]
+      }
+    ],
+    "total_cents": 68162600,
+    "extra_top5_tie_dates": []
+  },
+  "STORE4": {
+    "top5_days": [
+      "2025-11-24",
+      "2025-11-17",
+      "2025-11-28",
+      "2025-11-13",
+      "2025-09-21"
+    ],
+    "top5_revenue_cents": [
+      437247,
+      381830,
+      344483,
+      340108,
+      330344
+    ],
+    "unique_users": 2850,
+    "unique_author_sets": 299,
+    "most_popular": [
+      {
+        "authors": [
+          "Emil Rempel",
+          "Heriberto Kutch",
+          "Merle Rice"
+        ],
+        "copies": 198
+      }
+    ],
+    "best_buyers": [
+      {
+        "ids": [
+          53347,
+          54809
+        ],
+        "spend_cents": 126565,
+        "names": [
+          "Bart Schamberger JD",
+          "Erasmo Hodkiewicz DDS"
+        ]
+      }
+    ],
+    "total_cents": 77828982,
+    "extra_top5_tie_dates": []
+  },
+  "STORE5": {
+    "top5_days": [
+      "2025-10-20",
+      "2025-11-28",
+      "2025-09-27",
+      "2025-10-17",
+      "2025-12-05"
+    ],
+    "top5_revenue_cents": [
+      349185,
+      326826,
+      319050,
+      316518,
+      312192
+    ],
+    "unique_users": 2987,
+    "unique_author_sets": 311,
+    "most_popular": [
+      {
+        "authors": [
+          "Dulcie Bode"
+        ],
+        "copies": 169
+      }
+    ],
+    "best_buyers": [
+      {
+        "ids": [
+          52895,
+          53969
+        ],
+        "spend_cents": 136592,
+        "names": [
+          "Shakira Simonis",
+          "Ms. Barabara Johnson"
+        ]
+      }
+    ],
+    "total_cents": 70442231,
+    "extra_top5_tie_dates": []
+  }
+}
