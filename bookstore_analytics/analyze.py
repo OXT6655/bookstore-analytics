@@ -1,5 +1,3 @@
-"""Figures for one cleaned store."""
-
 from __future__ import annotations
 
 from collections import Counter, defaultdict

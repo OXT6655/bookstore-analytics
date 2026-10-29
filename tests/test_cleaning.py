@@ -1,5 +1,3 @@
-"""Parser and reconciliation checks that do not depend on the store extracts."""
-
 import unittest
 from datetime import date
 

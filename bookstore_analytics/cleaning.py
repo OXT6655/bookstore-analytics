@@ -1,10 +1,3 @@
-"""Parse the messy store extracts into typed tables.
-
-Prices are converted to US dollars and cents. Euro amounts use €1 = $1.20.
-Timestamps are reduced to a calendar date. Customer rows that differ in at
-most one identity field are treated as the same person.
-"""
-
 from __future__ import annotations
 
 import math
@@ -82,7 +75,6 @@ def _is_missing(value) -> bool:
 
 
 def normalize_text(value) -> str:
-    """Case-fold a text field. Blank and null-like tokens become empty."""
     if _is_missing(value):
         return ""
     text = _SPACE_RE.sub(" ", str(value).replace("\u00a0", " ")).strip().casefold()
@@ -112,7 +104,6 @@ def display_text(value) -> str:
 
 
 def parse_unit_price_usd(value) -> Decimal | None:
-    """Return the unit price in USD, rounded to the cent, or None."""
     if _is_missing(value):
         return None
     raw = str(value).replace("\u00a0", " ").strip()
@@ -122,8 +113,6 @@ def parse_unit_price_usd(value) -> Decimal | None:
     is_usd = _USD_RE.search(raw) is not None
     if is_eur == is_usd:
         return None
-    # A currency mark sitting between the euros/dollars and the cents
-    # (70€99¢, 46$99¢, $20¢25) is the decimal point, not a thousands gap.
     cleaned = re.sub(r"eur|usd", "", raw, flags=re.IGNORECASE)
     cleaned = _SPACE_RE.sub("", cleaned)
     cleaned = re.sub(r"(?<=\d)[€$¢](?=\d)", ".", cleaned)
@@ -184,7 +173,6 @@ def _extract_clock(text: str) -> bool:
 
 
 def parse_order_date(value) -> date | None:
-    """Parse one of the store timestamp spellings down to a calendar date."""
     if _is_missing(value):
         return None
     text = _normalize_timestamp_text(value)
@@ -228,7 +216,6 @@ def parse_order_date(value) -> date | None:
 
 
 def author_keys(value) -> tuple[str, ...]:
-    """Identity keys for the set of authors on one book."""
     if _is_missing(value):
         return ()
     if isinstance(value, (list, tuple)):
@@ -470,12 +457,6 @@ class _UnionFind:
 
 
 def reconcile_users(users: pd.DataFrame) -> tuple[pd.Series, list[dict]]:
-    """Link rows that differ in at most one of name, address, phone, or email.
-
-    Identity is the connected component of those links. A later row may change
-    a different field than an earlier row; both still belong to one person
-    because each step changes a single field.
-    """
     records = [
         {
             "name": row.name_key,

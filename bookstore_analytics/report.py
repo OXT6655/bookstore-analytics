@@ -1,5 +1,3 @@
-"""Write the dashboard data, the headline summary, and the matplotlib charts."""
-
 from __future__ import annotations
 
 import json
@@ -43,9 +41,15 @@ def build(root: Path = ROOT) -> dict:
         audit = result["audit"]
         if audit["dropped_price"] or audit["dropped_date"] or audit["dropped_keys"]:
             raise SystemExit(f"{store_dir.name} still has rows the cleaner could not read: {audit}")
+        chart_name = f"{store_dir.name.lower()}_daily_revenue.png"
         save_daily_revenue_chart(
             result["daily_revenue"],
-            chart_dir / f"{store_dir.name.lower()}_daily_revenue.png",
+            chart_dir / chart_name,
+            f"{store_dir.name} daily revenue",
+        )
+        save_daily_revenue_chart(
+            result["daily_revenue"],
+            root / "docs" / "charts" / chart_name,
             f"{store_dir.name} daily revenue",
         )
         result.pop("money_preview", None)
@@ -63,16 +67,18 @@ def build(root: Path = ROOT) -> dict:
     summary_path = root / "output" / "summary.json"
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(json.dumps(headlines, indent=2), encoding="utf-8")
-    print(f"wrote {data_js} ({data_js.stat().st_size / 1_048_576:.1f} MB)")
-    print(f"wrote {summary_path}")
+    print("results")
+    print()
     for name, headline in headlines.items():
         popular = headline["most_popular"][0]
         buyer = headline["best_buyers"][0]
-        print(
-            f"{name}: users={headline['unique_users']} "
-            f"sets={headline['unique_author_sets']} "
-            f"top day={headline['top5_days'][0]} "
-            f"popular={', '.join(popular['authors'])} ({popular['copies']}) "
-            f"buyer={buyer['ids']}"
-        )
+        days = ", ".join(headline["top5_days"])
+        names = ", ".join(popular["authors"])
+        print(name)
+        print("top 5 days:", days)
+        print("unique users:", headline["unique_users"])
+        print("unique author sets:", headline["unique_author_sets"])
+        print("most popular:", names)
+        print("best buyer:", buyer["ids"])
+        print()
     return headlines

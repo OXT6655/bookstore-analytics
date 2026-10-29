@@ -1,35 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Five-store sales desk</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+  <title>Bookstore</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page">
-    <header class="mast">
-      <div>
-        <p class="eyebrow">Bookstore intelligence</p>
-        <h1>Five-store sales desk</h1>
-        <p class="lede">Daily revenue, reconciled customers, and author sets. Each folder is computed on its own, then shown here.</p>
-      </div>
-      <p class="mast-note">Euro prices use €1 = $1.20. Figures are in dollars and cents.</p>
-    </header>
-    <div class="switch" id="store-switch" role="tablist" aria-label="Stores"></div>
-    <div class="tabs" id="section-tabs" role="tablist" aria-label="Sections">
-      <button type="button" id="tab-revenue" data-tab="revenue" role="tab" aria-selected="true" aria-controls="panel">Revenue</button>
-      <button type="button" id="tab-customers" data-tab="customers" role="tab" aria-selected="false" aria-controls="panel">Customers</button>
-      <button type="button" id="tab-authors" data-tab="authors" role="tab" aria-selected="false" aria-controls="panel">Authors</button>
-    </div>
-    <main id="panel" role="tabpanel"></main>
-    <footer class="colophon">
-      <p>Customer and author chats answer from the reconciled tables for the selected store. They do not call an outside model, so the counts stay the counts on the page.</p>
-    </footer>
+  <h1>Bookstore</h1>
+  <div id="stores"></div>
+  <div id="tabs">
+    <button type="button" data-tab="revenue">Revenue</button>
+    <button type="button" data-tab="users">Users</button>
+    <button type="button" data-tab="authors">Authors</button>
   </div>
+  <div id="panel"></div>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
